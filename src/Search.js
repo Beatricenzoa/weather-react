@@ -86,7 +86,11 @@ export default function Search(props) {
         on GitHub
       </a>{" "}
       and hosted on{" "}
-      <a href="#" target="_blank" rel="noreferrer">
+      <a
+        href="jazzy-marshmallow-fc8a82.netlify.app"
+        target="_blank"
+        rel="noreferrer"
+      >
         {" "}
         Netlify
       </a>
