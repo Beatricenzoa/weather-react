@@ -70,15 +70,23 @@ export default function Search(props) {
   const footer = (
     <p>
       This project was coded by{" "}
-      <a href="https://github.com/Beatricenzoa" target="_blank">
+      <a
+        href="https://github.com/Beatricenzoa"
+        target="_blank"
+        rel="noreferrer"
+      >
         Beatrice Mutuku
       </a>{" "}
       and is{" "}
-      <a href="https://github.com/Beatricenzoa/weather-react" target="_blank">
+      <a
+        href="https://github.com/Beatricenzoa/weather-react"
+        target="_blank"
+        rel="noreferrer"
+      >
         on GitHub
       </a>{" "}
       and hosted on{" "}
-      <a href="#" target="_blank">
+      <a href="#" target="_blank" rel="noreferrer">
         {" "}
         Netlify
       </a>
