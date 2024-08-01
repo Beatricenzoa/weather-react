@@ -25,3 +25,34 @@ header {
   margin-left: 4px;
   font-size: 15px;
 }
+h1 {
+  font-size: 34px;
+  font-weight: 900;
+  margin-top: 40px;
+  color: #231c39;
+}
+#temperature-details {
+  display: flex;
+  justify-content: start;
+}
+#temperature {
+  font-size: 80px;
+  font-weight: bold;
+  margin-top: 0;
+  color: #231c39;
+}
+#unit {
+  color: #231c39;
+  font-weight: bold;
+  font-size: 26px;
+}
+
+.current-details {
+  display: flex;
+  justify-content: space-between;
+}
+.precipitation {
+  font-size: 20px;
+  margin-right: 25px;
+  opacity: 0.8;
+}
