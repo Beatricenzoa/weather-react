@@ -87,7 +87,7 @@ export default function Search(props) {
       </a>{" "}
       and hosted on{" "}
       <a
-        href="jazzy-marshmallow-fc8a82.netlify.app"
+        href="https://jazzy-marshmallow-fc8a82.netlify.app/"
         target="_blank"
         rel="noreferrer"
       >
