@@ -3,7 +3,7 @@ import axios from "axios";
 import "./App.css";
 
 export default function Search(props) {
-  let [city, setCity] = useState("");
+  let [city, setCity] = useState(props.defaultCity);
   let [weather, setWeather] = useState({});
   let [searched, setSearched] = useState(false);
 
@@ -15,18 +15,20 @@ export default function Search(props) {
       icon: response.data.condition.icon_url,
       description: response.data.condition.description,
       wind: response.data.wind.speed,
+      city: response.data.city,
     });
-    console.log(response.data);
   }
 
   function handleSubmit(event) {
     event.preventDefault();
+    searchWeather();
+  }
+  function searchWeather() {
     const key = "0f8t20affd39ebb0d8d3f0o83cf0b40f";
-    const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}&units=metric`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${key}&units=metric`;
 
     axios.get(apiUrl).then(displayWeather);
   }
-
   function handleChange(event) {
     setCity(event.target.value);
   }
@@ -43,9 +45,9 @@ export default function Search(props) {
       <input type="submit" value="search" id="search-button" />
     </form>
   );
-  const main = (
+  const currentWeather = (
     <main>
-      <h1 id="current-city">{city}</h1>
+      <h1 id="current-city">{weather.city}</h1>
       <div className="current-details">
         <div className="current-weather">
           <div className="precipitation">
@@ -100,7 +102,7 @@ export default function Search(props) {
     return (
       <div>
         {header}
-        {main}
+        {currentWeather}
         {footer}
       </div>
     );
@@ -108,6 +110,7 @@ export default function Search(props) {
     return (
       <div>
         {header}
+        {searchWeather()}
         {footer}
       </div>
     );
