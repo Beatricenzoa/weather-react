@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ThreeDots } from "react-loader-spinner";
 import Weather from "./Weather";
 import axios from "axios";
 import "./App.css";
@@ -90,6 +91,15 @@ export default function Search(props) {
   } else {
     searchWeather("Nairobi");
 
-    return "loading...";
+    return (
+      <ThreeDots
+        visible={true}
+        height="80"
+        width="80"
+        color="blue"
+        radius="9"
+        ariaLabel="three-dots-loading"
+      />
+    );
   }
 }
