@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import CurrentDate from "./CurrentDate";
+import Weather from "./Weather";
 import axios from "axios";
 import "./App.css";
 
@@ -36,84 +36,60 @@ export default function Search(props) {
     axios.get(apiUrl).then(displayWeather);
   }
 
-  const header = (
-    <form id="search-form" onSubmit={handleSubmit}>
+  const form = (
+    <form className="search-form" onSubmit={handleSubmit}>
       <input
         type="search"
         placeholder="Enter a city"
         required
-        id="search-input"
+        className="search-input"
         onChange={handleChange}
       />
-      <input type="submit" value="search" id="search-button" />
+      <input type="submit" value="search" className="search-button" />
     </form>
   );
-  let currentWeather = (
-    <main>
-      <h1 id="current-city">{weather.city}</h1>
-      <div className="current-details">
-        <div className="current-weather">
-          <div className="precipitation">
-            <CurrentDate date={weather.date} />
-            <p> {weather.description}</p>
-            <p>
-              Humidity: <strong id="humidity">{weather.humidity}%</strong>,
-              Wind: <strong id="wind">{weather.wind}km/h</strong>
-            </p>
-          </div>
-        </div>
-        <div id="temperature-details">
-          <div id="icon">
-            <img src={weather.icon} alt="weather icon" />
-          </div>
-          <div id="temperature">{weather.temperature}</div>
-          <div id="unit">℃</div>
-        </div>
-      </div>
-      <footer>
-        <p>
-          This project was coded by{" "}
-          <a
-            href="https://github.com/Beatricenzoa"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Beatrice Mutuku
-          </a>{" "}
-          and is{" "}
-          <a
-            href="https://github.com/Beatricenzoa/weather-react"
-            target="_blank"
-            rel="noreferrer"
-          >
-            on GitHub
-          </a>{" "}
-          and hosted on{" "}
-          <a
-            href="https://jazzy-marshmallow-fc8a82.netlify.app/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            {" "}
-            Netlify
-          </a>
-        </p>
-      </footer>
-    </main>
+  const footer = (
+    <footer className="footer">
+      <p>
+        This project was coded by{" "}
+        <a
+          href="https://github.com/Beatricenzoa"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Beatrice Mutuku
+        </a>{" "}
+        and is{" "}
+        <a
+          href="https://github.com/Beatricenzoa/weather-react"
+          target="_blank"
+          rel="noreferrer"
+        >
+          on GitHub
+        </a>{" "}
+        and hosted on{" "}
+        <a
+          href="https://jazzy-marshmallow-fc8a82.netlify.app/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          {" "}
+          Netlify
+        </a>
+      </p>
+    </footer>
   );
   if (weather.searched === true) {
     return (
       <div>
-        {header}
-        {currentWeather}
+        {form}
+        <Weather data={weather} />
+        {footer}
       </div>
     );
   } else {
-    return (
-      <div>
-        {header}
-        {searchWeather()}
-      </div>
-    );
+    searchWeather("Nairobi");
+
+    return "loading...";
   }
 }
