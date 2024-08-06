@@ -3,7 +3,7 @@ import Search from "./Search";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App container">
       <Search defaultCity="Nairobi" />
     </div>
   );

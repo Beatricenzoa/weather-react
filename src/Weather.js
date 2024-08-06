@@ -9,10 +9,10 @@ export default function Weather(props) {
       <div className="current-details">
         <div className="current-weather">
           <div className="precipitation">
+            <p className="d-flex mb-0">
+              <CurrentDate date={props.data.date} />, {props.data.description}
+            </p>
             <p>
-              <CurrentDate date={props.data.date} />
-              {props.data.description}
-              <br />
               Humidity:{" "}
               <strong className="humidity">{props.data.humidity}%</strong>,
               Wind: <strong className="wind">{props.data.wind}km/h</strong>
@@ -20,7 +20,7 @@ export default function Weather(props) {
           </div>
         </div>
         <div className="temperature-details">
-          <div id="icon">
+          <div className="icon">
             <img src={props.data.icon} alt="weather icon" />
           </div>
           <div className="temperature">{props.data.temperature}</div>

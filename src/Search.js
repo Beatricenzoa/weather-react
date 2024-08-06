@@ -89,7 +89,7 @@ export default function Search(props) {
       </div>
     );
   } else {
-    searchWeather("Nairobi");
+    searchWeather();
 
     return (
       <ThreeDots

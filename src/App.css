@@ -1,9 +1,12 @@
 .App {
   border-radius: 10px;
   background: #f2f2f2;
-  width: 600px;
+  width: 650px;
   margin: 60px auto;
   padding: 30px;
+}
+.search-form {
+  margin-bottom: 30px;
 }
 .search-input {
   border: none;
@@ -16,7 +19,7 @@
 .search-button {
   border: none;
   border-radius: 5px;
-  padding: 20px 25px;
+  padding: 20px 35px;
   background: #38598b;
   color: white;
   margin-left: 4px;
@@ -37,13 +40,23 @@ h1 {
   font-weight: bold;
   margin-top: 0;
   color: #231c39;
+  position: relative;
+  top: -30px;
 }
 .unit {
   color: #231c39;
   font-weight: bold;
   font-size: 26px;
+  position: relative;
+  top: -20px;
 }
-
+.icon {
+  position: relative;
+  top: -20px;
+}
+strong {
+  color: #113f67;
+}
 .current-details {
   display: flex;
   justify-content: space-between;
@@ -54,6 +67,7 @@ h1 {
   opacity: 0.8;
 }
 .footer {
+  color: #4d4d4e;
   font-size: 14px;
   text-align: center;
 }
