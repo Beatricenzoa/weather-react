@@ -61,13 +61,13 @@ export default function Search(props) {
         >
           Beatrice Mutuku
         </a>{" "}
-        and is{" "}
+        and is on{" "}
         <a
           href="https://github.com/Beatricenzoa/weather-react"
           target="_blank"
           rel="noreferrer"
         >
-          on GitHub
+          GitHub
         </a>{" "}
         and hosted on{" "}
         <a
