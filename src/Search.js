@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
+import WeatherForecast from "./WeatherForecast";
 import Weather from "./Weather";
 import axios from "axios";
 import "./App.css";
@@ -50,7 +51,7 @@ export default function Search(props) {
     </form>
   );
   const footer = (
-    <footer className="footer">
+    <footer className="footer mt-5">
       <p>
         This project was coded by{" "}
         <a
@@ -85,6 +86,7 @@ export default function Search(props) {
       <div>
         {form}
         <Weather data={weather} />
+        <WeatherForecast data={weather} />
         {footer}
       </div>
     );
